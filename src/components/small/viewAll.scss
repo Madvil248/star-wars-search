@@ -1,0 +1,14 @@
+@import "../../styleVariables.scss";
+
+.view-all-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    .view-all {
+        width: 25px;
+        height: 25px;
+        fill: $yellow-color;
+    }
+}

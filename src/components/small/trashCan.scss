@@ -1,0 +1,27 @@
+@import "../../styleVariables.scss";
+
+.trashcan-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    .trashcan {
+        width: 20px;
+        height: 20px;
+        fill: $yellow-color;
+
+        .trashcan-open {
+            display: none;
+        }
+
+        &:hover {
+            .trashcan-open {
+                display: inline;
+            }
+            .trashcan-closed {
+                display: none;
+            }
+        }
+    }
+}
