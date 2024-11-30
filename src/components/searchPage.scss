@@ -122,7 +122,7 @@
                 right: 0;
                 display: flex;
                 position: absolute;
-                top: calc(50% - 20px);
+                top: calc(50% - 1em);
                 justify-content: center;
                 background-color: transparent;
             }
@@ -149,6 +149,17 @@
                 color: rgba($secondary-color, 0.9);
                 border: 1px solid rgba(0, 0, 0, 0.3);
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .autocomplete-results {
+        flex: 3;
+        max-width: 900px;
+        min-width: $width;
+        .category-section .category-section-header .category-view-all{
+
         }
     }
 }

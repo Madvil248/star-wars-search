@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./searchPage.scss";
 import Loader from "./small/loader";
 import ViewAll from "./small/viewAll";
+import useDebounce from "../hooks/debounce";
 
 interface SearchResult {
     name?: string;
@@ -81,22 +82,15 @@ const SearchPage: React.FC = () => {
         getAPIs();
     }, []);
 
-    useEffect(() => {
-        if (debounceRef.current) {
-            clearTimeout(debounceRef.current);
-        }
-
-        if (query.length >= 1) {
-            debounceRef.current = setTimeout(() => {
+    useDebounce(
+        () => {
+            if (query.length >= 1) {
                 fetchResults();
-            }, 1000);
-        } else if (categoryResults.length > 0) {
-            setCategoryResults([]);
-        }
-        return () => {
-            clearTimeout(debounceRef.current);
-        };
-    }, [query]);
+            }
+        },
+        1000,
+        [query]
+    );
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setQuery(e.target.value);

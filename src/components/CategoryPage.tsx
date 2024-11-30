@@ -24,7 +24,7 @@ const CategoryPage: React.FC = () => {
 
     return (
         <div className="category-page">
-            <div className="wrapper">
+            <div className="header-wrapper">
                 <div className="category-header">
                     <img
                         src="//cssanimation.rocks/demo/starwars/images/star.svg"

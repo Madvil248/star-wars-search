@@ -14,11 +14,11 @@
     .category-body {
         color: $secondary-color;
     }
-    .wrapper {
+    .header-wrapper {
         width: 34em;
-        height: 17em;
-        margin: 40px 0;
+        margin: 3em 0;
         position: relative;
+        min-height: 16.5em;
     }
     .star {
         animation: star 10s ease-out;
@@ -137,14 +137,22 @@
     /*** Media queries for adjusting to different screen sizes ***/
 
     @media only screen and (max-width: 600px) {
-        .category-headero {
-            font-size: 10px;
+        .header-wrapper {
+            width: 27em;
+            min-height: 13.25em;
+            .category-header {
+                font-size: 13px;
+            }
         }
     }
 
     @media only screen and (max-width: 480px) {
-        .category-header {
-            font-size: 7px;
+        .header-wrapper {
+            width: 22em;
+            min-height: 11.25em;
+            .category-header {
+                font-size: 11px;
+            }
         }
     }
 }
